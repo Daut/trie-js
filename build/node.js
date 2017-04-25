@@ -1,18 +1,17 @@
-var TrieNode = (function () {
-    function TrieNode() {
+class TrieNode {
+    constructor() {
         this.words = 0;
         this.prefixes = 0;
         this.edges = new Map();
     }
-    TrieNode.prototype.addWord = function () {
+    addWord() {
         return;
-    };
-    TrieNode.prototype.countPrefixes = function () {
+    }
+    countPrefixes() {
         return this.prefixes;
-    };
-    TrieNode.prototype.countWords = function () {
+    }
+    countWords() {
         return this.words;
-    };
-    return TrieNode;
-}());
+    }
+}
 //# sourceMappingURL=node.js.map
