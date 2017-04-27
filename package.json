@@ -1,4 +1,9 @@
 {
+  "name": "trie-js",
+  "version": "0.0.1",
+  "scripts": {
+    "watch": "tsc"
+  },
   "devDependencies": {
     "tslint": "5.1.0",
     "typescript": "2.2.2"

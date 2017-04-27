@@ -1,17 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class TrieNode {
-    constructor() {
-        this.words = 0;
-        this.prefixes = 0;
-        this.edges = new Map();
-    }
-    addWord() {
-        return;
-    }
-    countPrefixes() {
-        return this.prefixes;
-    }
-    countWords() {
-        return this.words;
+    constructor(key) {
+        this.isLeaf = false;
+        this.character = key;
+        this.children = new Map();
     }
 }
+exports.TrieNode = TrieNode;
 //# sourceMappingURL=node.js.map
