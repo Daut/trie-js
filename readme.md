@@ -14,6 +14,9 @@ const trie = new Trie();
 ### Insert element
 `trie.insert('Tree');`
 
+### Search for an element
+`trie.search('Tree');`
+
 ## Build
 
 Run `npm run build` to build project.
