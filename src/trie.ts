@@ -42,7 +42,7 @@ class Trie {
      * @memberof Trie
      */
     public search(word: string): boolean {
-        const node = this.searchNode(word);
+        const node = this.getNode(word);
         if (node && node.isLeaf) {
             return true;
         } else {
@@ -51,13 +51,13 @@ class Trie {
     }
 
     /**
-     * Search for a node in the Trie.
+     * Get a node from the Trie.
      *
      * @param {string} word
      * @returns {TrieNode}
      * @memberof Trie
      */
-    public searchNode(word: string): TrieNode {
+    public getNode(word: string): TrieNode {
         let node = null;
         let currentNode = this.root.children;
 
@@ -81,7 +81,7 @@ class Trie {
      * @memberof Trie
      */
     public startsWith(prefix: string): boolean {
-        return this.searchNode(prefix) ? true : false;
+        return this.getNode(prefix) ? true : false;
     }
 }
 
