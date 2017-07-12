@@ -7,7 +7,13 @@ class Trie {
         this.root = new TrieNode();
     }
 
-    public insert(word: string) {
+    /**
+     * Insert word in the Trie.
+     *
+     * @param {string} word
+     * @memberof Trie
+     */
+    public insert(word: string): void {
         let children = this.root.children;
         let level = 0;
 
@@ -28,20 +34,54 @@ class Trie {
         }
     }
 
-    public search(word: string) {
-        let exists = true;
-        let currentNode = this.root.children.get(word[0]);
+    /**
+     * Check if word exists in the Trie.
+     *
+     * @param {string} word
+     * @returns {boolean}
+     * @memberof Trie
+     */
+    public search(word: string): boolean {
+        const node = this.searchNode(word);
+        if (node && node.isLeaf) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-        for (let i = 0; i < word.length && exists; i++) {
-            const char = currentNode ? currentNode.character : null;
-            if (char === word[i]) {
-                currentNode = currentNode.children.get(word[i + 1]);
+    /**
+     * Search for a node in the Trie.
+     *
+     * @param {string} word
+     * @returns {TrieNode}
+     * @memberof Trie
+     */
+    public searchNode(word: string): TrieNode {
+        let node = null;
+        let currentNode = this.root.children;
+
+        for (const char of word) {
+            if (currentNode.get(char)) {
+                node = currentNode.get(char);
+                currentNode = node.children;
             } else {
-                exists = false;
+                return null;
             }
         }
 
-        return exists;
+        return node;
+    }
+
+    /**
+     * Check if any word in Trie matches given prefix
+     *
+     * @param {string} prefix
+     * @returns {boolean}
+     * @memberof Trie
+     */
+    public startsWith(prefix: string): boolean {
+        return this.searchNode(prefix) ? true : false;
     }
 }
 

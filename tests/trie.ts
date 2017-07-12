@@ -7,4 +7,4 @@ trie.insert("Dautovic");
 trie.insert("Boki");
 
 console.warn(trie.search("Bozidar"));
-console.warn(trie.search("Boki"));
+console.warn(trie.searchNode("Bozi"));
