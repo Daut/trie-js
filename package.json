@@ -2,7 +2,8 @@
   "name": "trie-js",
   "version": "0.0.1",
   "scripts": {
-    "watch": "tsc"
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
   "devDependencies": {
     "eslint": "4.1.1",

@@ -6,7 +6,6 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "watch": true,
         "outDir": "build",
         "target": "es6"
     },
