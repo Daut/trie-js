@@ -7,7 +7,7 @@
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "pre-commit": [
-    "lint:js"
+    "lint:ts"
   ],
   "devDependencies": {
     "eslint": "4.1.1",
