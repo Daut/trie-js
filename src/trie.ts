@@ -9,7 +9,8 @@ class Trie {
 
     public insert(word: string) {
         let children = this.root.children;
-        let i = 0;
+        let level = 0;
+
         for (const char of word) {
             let node;
             if (children.get(char)) {
@@ -21,10 +22,26 @@ class Trie {
 
             children = node.children;
 
-            if (i++ === word.length - 1) {
+            if (level++ === word.length - 1) {
                 node.isLeaf = true;
             }
         }
+    }
+
+    public search(word: string) {
+        let exists = true;
+        let currentNode = this.root.children.get(word[0]);
+
+        for (let i = 0; i < word.length && exists; i++) {
+            const char = currentNode ? currentNode.character : null;
+            if (char === word[i]) {
+                currentNode = currentNode.children.get(word[i + 1]);
+            } else {
+                exists = false;
+            }
+        }
+
+        return exists;
     }
 }
 
