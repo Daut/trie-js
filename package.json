@@ -4,6 +4,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
+    "test": "mocha build/tests",
     "lint:ts": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "pre-commit": [
@@ -12,8 +13,12 @@
   "devDependencies": {
     "eslint": "4.1.1",
     "eslint-config-vast": "1.7.1",
+    "mocha": "3.4.2",
     "pre-commit": "1.2.2",
     "tslint": "5.1.0",
     "typescript": "2.2.2"
+  },
+  "dependencies": {
+    "@types/node": "8.0.14"
   }
 }
